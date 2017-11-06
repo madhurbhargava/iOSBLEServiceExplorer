@@ -12,6 +12,8 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
 
     @IBOutlet weak var textView: UITextView!
     var manager:CBCentralManager!
+    
+    //Fix for Api Misuse Error - We need to maintain a strong reference for the discovered peripheral throughout the BLE lifecycle
     var devicePeripherals = [CBPeripheral]()
     
     override func viewDidLoad() {
